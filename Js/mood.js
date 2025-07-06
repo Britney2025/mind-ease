@@ -10,7 +10,7 @@ const moodEmojis = {
 
 const affirmations = {
     happy: "Keep spreading joy. The world needs your light!✨",
-    sad: "It's okay to feel this way. Better days are coming.💖",
+    sad: "It's okay to feel this way. Better days are coming.💖",   
     angry: "Breath deeply. Let go and find your peace.🦋",
     anxious: "You are safe, and everything will be okay.🤍",
     calm: "Enjoy this peaceful moment - you've earned it.🌺"

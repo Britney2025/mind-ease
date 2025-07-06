@@ -3,9 +3,32 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mind Ease</title>
+    <title>My Journal - MindEase</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    
+    <header>
+        <h1>📒 My Journal</h1>
+        <p>Write your thoughts, reflections, or anything on your mind.</p>
+    </header>
+
+    <main>
+        <section class="journal-entry">
+            <textarea name="Journal" id="journal-text" placeholder="Note something down..."></textarea>
+            <button class="btn" onclick="saveJournal()">Save Entry</button>
+            <p id="saveMsg" class="save-message"></p>
+        </section>
+
+        <section class="journal-history">
+            <h2>Past Entries</h2>
+            <ul id="entryList"></ul>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 MindEase. All rights reserved.</p>
+    </footer>
+
+    <script src="Js/journal.js"></script>
 </body>
 </html>
