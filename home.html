@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mind Ease</title>
     <link rel="stylesheet" href="styles.css">
-    
+
 </head>
 <body>
     <header>
@@ -14,30 +14,30 @@
     </header>
 
     <main>
-        <section>
+        <section class="intro">
             <h2>Welcome to MindEase</h2>
             <p>A safe place where you can track your mood, manage stress, and stay grounded through journaling,
                 affirmations and much more.
             </p>
         </section>
 
-        <section>
+        <section class="select-mood">
             <h2>How are you feeling today?</h2>
             <div class="mood-options">
-                <button>😀</button>
-                <button>😥</button>
-                <button>😠</button>
-                <button>😰</button>
-                <button>🙂</button>
+                <button class="mood" data-mood="happy" aria-label="Happy">😀</button>
+                <button class="mood" data-mood="sad" aria-label="Sad">😥</button>
+                <button class="mood" data-mood="angry" aria-label="Angry">😠</button>
+                <button class="mood" data-mood="anxious" aria-label="Anxious">😰</button>
+                <button class="mood" data-mood="calm" aria-label="Calm">🙂</button>
             </div>
         </section>
 
-        <section>
+        <section class="features">
             <h2>What you can do</h2>
             <div class="feature-list">
-                <div>Add a note about your day.</div>
-                <div>Journal your thoughts.</div>
-                <div>Create your daily tasks and goals.</div>
+                <div class="feature-card">Add a note about your day.</div>
+                <div class="feature-card">Journal your thoughts.</div>
+                <div class="feature-card">Create your daily tasks and goals.</div>
             </div>
         </section>
     </main>
