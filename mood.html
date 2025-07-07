@@ -26,13 +26,13 @@
         </div>
     </section>
 
-    <section class="select-mood">
+    <section id="mood-selection" class="select-mood" hidden>
         <div class="mood-options">
-            <button class="mood" data-mood="happy" aria-label="Happy">😀</button>
-            <button class="mood" data-mood="sad" aria-label="Sad">😥</button>
-            <button class="mood" data-mood="angry" aria-label="Angry">😠</button>
-            <button class="mood" data-mood="anxious" aria-label="Anxious">😰</button>
-            <button class="mood" data-mood="calm" aria-label="Calm">🙂</button>
+            <button onclick="selectMood('happy')">😀</button>
+            <button onclick="selectMood('sad')">😥</button>
+            <button onclick="selectMood('angry')">😠</button>
+            <button onclick="selectMood('anxious')">😰</button>
+            <button onclick="selectMood('calm')">🙂</button>
         </div>
     </section>
 
