@@ -1,12 +1,25 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>My Journal - MindEase</title>
     <link rel="stylesheet" href="styles.css">
 </head>
+
 <body>
+
+    <div id="sidebar" class="sidebar">
+        <a href="home.html">💒 Home</a>
+        <a href="mood.html">😊 Mood</a>
+        <a href="journal.html">📒 Journal</a>
+        <a href="tasks.html">📝 Tasks</a>
+        <a href="support.html">🤝 Support</a>
+        <a href="#" onclick="closeSidebar()">❌ Close</a>
+    </div>
+    <button class="menu-btn" onclick="toggleSidebar()">≡</button>
+
     <header>
         <h1>📒 My Journal</h1>
         <p>Write your thoughts, reflections, or anything on your mind.</p>
@@ -32,4 +45,5 @@
 
     <script src="Js/journal.js"></script>
 </body>
+
 </html>
