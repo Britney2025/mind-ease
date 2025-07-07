@@ -206,3 +206,20 @@ blockquote.quote-text {
     border-radius: 8px;
     margin: 2rem 0;
 }
+
+.affirmation-slider {
+    margin: 2rem auto;
+    text-align: center;
+    max-width: 600px;
+    background: #f0fdfa;
+    padding: 2rem;
+    border-radius: 12px;
+    font-size: 1.2rem;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    transition: opacity 0.5s ease-in-out;
+}
+
+#affirmationText {
+    opacity: 1;
+    transition: opacity 0.5s;
+}
