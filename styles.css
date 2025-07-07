@@ -7,6 +7,55 @@ body {
     text-align: center;
 }
 
+.sidebar {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 999;
+    top: 0;
+    left: 0;
+    background-color: #f0fdfa;
+    overflow-x: hidden;
+    transition: 0.3s;
+    padding-top: 60px;
+    box-shadow: 2px 0 8px rgba(0, 0, 0, 0.1);
+}
+
+.sidebar a {
+    padding: 1rem;
+    text-decoration: none;
+    font-size: 1rem;
+    color: #333;
+    display: block;
+    transition: 0.2s;
+}
+
+.sidebar a:hover {
+    background-color: #d1fae5;
+    color: #000;
+}
+
+.menu-btn {
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    background-color: #14b8a6;
+    color: white;
+    font-size: 1.5rem;
+    border: none;
+    border-radius: 8px;
+    padding: 10px 15px;
+    cursor: pointer;
+    z-index: 1000;
+}
+
+@media (min-width: 768px) {
+    .menu-btn{
+        top: 30px;
+        left: 30px;
+    }
+}
+
 header {
     background-color: #7dd3fc;
     padding: 2rem;
