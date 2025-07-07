@@ -90,56 +90,6 @@ header {
     transform: scale(1.3s);
 }
 
-.features {
-    text-align: center;
-    background-color: #f9fafb;
-    padding: 2rem 1rem;
-}
-
-.feature-cards {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 2rem;
-    justify-content: center;
-    margin-top: 2rem;
-}
-
-.feature-card {
-    background: #fff;
-    border-radius: 16px;
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.05);
-    padding: 1.5rem;
-    width: 250px;
-    transition: transform 0.2s;
-}
-
-.feature-card:hover {
-    transform: translateY(-5px);
-}
-
-.feature-card img {
-    width: 60px;
-    height: 60px;
-    margin-bottom: 1rem;
-}
-
-.feature-card h3 {
-    margin-bottom: 0.5rem;
-    color: #14b8a6;
-}
-
-.feature-card p {
-    color: #555;
-    font-size: 1rem;
-}
-
-footer {
-    margin-top: 2rem;
-    padding: 1rem;
-    font-size: 1rem;
-    background-color: #dbeafe;
-}
-
 .mood-result {
     padding: 2rem;
     text-align: center;
