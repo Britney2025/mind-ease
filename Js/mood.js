@@ -70,3 +70,17 @@ function toggleSidebar() {
 function closeSidebar() {
     document.getElementById("sidebar").style.width = "0";
 }
+
+const text = "How are you feeling today?";
+const typingText = document.getElementById("typing-text");
+let index = 0;
+
+function typeWriter() {
+    if (index < text.length) {
+        typingText.innerHTML += text.charAt(index);
+        index++;
+        setTimeout(typeWriter, 100); //speed of typing
+    }
+}
+
+window.onload = typeWriter;
