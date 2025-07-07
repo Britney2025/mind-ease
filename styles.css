@@ -133,3 +133,37 @@ textarea{
     cursor: pointer;
     margin-top: 0.5rem;
 }
+
+.task-input {
+    margin: 2rem auto;
+}
+
+#taskInput {
+    padding: 0.5rem;
+    width: 60%;
+    font-size: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+}
+
+.task-list ul {
+    list-style: none;
+    padding: 0;
+    max-width: 80%;
+    margin: auto;
+}
+
+.task-list li {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: #f0fdf4;
+    padding: 1rem;
+    margin: 0.5rem 0;
+    border-radius: 10px;
+}
+
+.task-list span.done {
+    text-decoration: line-through;
+    color: gray;
+}
