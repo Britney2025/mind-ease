@@ -160,6 +160,41 @@ header {
     padding: 2rem;
 }
 
+.mood-hero {
+    background-image: url("images/girls\ dp.jpeg");
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    padding: 6rem 2rem;
+    color: white;
+    text-align: center;
+    min-height: 50vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.mood-hero::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-color: rgba(0, 0, 0, 0.4);
+}
+
+.mood-hero-content {
+    position: relative;
+    z-index: 1;
+}
+
+#typing-text {
+    font-size: 2rem;
+    font-weight: 600;
+    font-family: 'Segoe UI', sans-serif;
+    border-right: 2px solid white;
+    white-space: nowrap;
+    overflow: hidden;
+}
+
 .select-mood {
     padding: 2rem;
 }
