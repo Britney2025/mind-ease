@@ -73,6 +73,7 @@ function closeSidebar() {
 
 const text = "How are you feeling today?";
 const typingText = document.getElementById("typing-text");
+const moodSection = document.getElementById("mood-selection");
 let index = 0;
 
 function typeWriter() {
