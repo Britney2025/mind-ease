@@ -20,7 +20,7 @@ function addTask() {
     if (!text) return;
 
     const tasks = JSON.parse(localStorage.getItem("myTasks")) || [];
-    tasks.push({text, done: false });
+    tasks.push({ text, done: false });
     localStorage.setItem("myTasks", JSON.stringify(tasks));
     input.value = "";
     loadTasks();
@@ -34,10 +34,12 @@ function toggleDone(index) {
 }
 
 function deleteTask(index) {
-    const tasks = JSON.parse(localStorage.getItem("myTasks")) || [];
-    tasks.splice(index, 1);
-    localStorage.setItem("myTasks", JSON.stringify(tasks));
-    loadTasks();
+    if (confirm("Are you sure you want to delete this task?")) {
+        const tasks = JSON.parse(localStorage.getItem("myTasks")) || [];
+        tasks.splice(index, 1);
+        localStorage.setItem("myTasks", JSON.stringify(tasks));
+        loadTasks();
+    }
 }
 
 loadTasks();
