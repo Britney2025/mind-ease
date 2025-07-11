@@ -3,7 +3,7 @@ function saveJournal() {
 
     if (!text) return;
     const date = new Date().toLocaleString();
-    const entry = {text, date};
+    const entry = { text, date };
 
     const entries = JSON.parse(localStorage.getItem("journalEntries")) || [];
     entries.unshift(entry);
@@ -36,13 +36,34 @@ function displayEntries() {
 }
 
 function deleteEntry(index) {
-    const entries = JSON.parse(localStorage.getItem("journalEntries")) || [];
-    entries.splice(index, 1);
-    localStorage.setItem("journalEntries", JSON.stringify(entries));
-    displayEntries();
+    showConfirm("Delete this journal entry?", () => {
+        const entries = JSON.parse(localStorage.getItem("journalEntries")) || [];
+        entries.splice(index, 1);
+        localStorage.setItem("journalEntries", JSON.stringify(entries));
+        displayEntries();
+    });
 }
 
 displayEntries();
+
+function showConfirm(message, onConfirm) {
+    const modal = document.getElementById("confirmModal");
+    const msg = document.getElementById("confirmMessage");
+    const yesBtn = document.getElementById("confirmYes");
+    const noBtn = document.getElementById("confirmNo");
+
+    msg.textContent = message;
+    modal.style.display = "flex";
+
+    yesBtn.onclick = () => {
+        modal.style.display = "none";
+        onConfirm();
+    };
+
+    noBtn.onclick = () => {
+        modal.style.display = "none"
+    };
+}
 
 // function toggleSidebar() {
 //     const sidebar = document.getElementById("sidebar");
