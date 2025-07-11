@@ -34,15 +34,34 @@ function toggleDone(index) {
 }
 
 function deleteTask(index) {
-    if (confirm("Are you sure you want to delete this task?")) {
+    showConfirm("Are you sure you want to delete this task?", () => {
         const tasks = JSON.parse(localStorage.getItem("myTasks")) || [];
         tasks.splice(index, 1);
         localStorage.setItem("myTasks", JSON.stringify(tasks));
         loadTasks();
-    }
+    })
 }
 
 loadTasks();
+
+function showConfirm(message, onConfirm) {
+    const modal = document.getElementById("confirmModal");
+    const msg = document.getElementById("confirmMessage");
+    const yesBtn = document.getElementById("confirmYes");
+    const noBtn = document.getElementById("confirmNo");
+
+    msg.textContent = message;
+    modal.style.display = "flex";
+
+    yesBtn.onclick = () => {
+        modal.style.display = "none";
+        onConfirm();
+    };
+
+    noBtn.onclick = () => {
+        modal.style.display = "none"
+    };
+}
 
 // function toggleSidebar() {
 //     const sidebar = document.getElementById("sidebar");
