@@ -10,15 +10,18 @@
 </head>
 
 <body>
-    <div id="sidebar" class="sidebar">
-        <a href="home.html">💒 Home</a>
-        <a href="mood.html">😊 Mood</a>
-        <a href="journal.html">📒 Journal</a>
-        <a href="tasks.html">📝 Tasks</a>
-        <a href="support.html">🤝 Support</a>
-        <a href="#" onclick="closeSidebar()">❌ Close</a>
-    </div>
-    <button class="menu-btn" onclick="toggleSidebar()">≡</button>
+    
+    <button id="hamburger" onclick="toggleSidebar()">≡</button>
+    <aside id="sidebar" class="sidebar">
+        <button id="closeSidebar" onclick="toggleSidebar()">❌</button>
+        <nav>
+            <a href="index.html">💒 Home</a>
+            <a href="mood.html">😊 Mood</a>
+            <a href="journal.html">📒 Journal</a>
+            <a href="tasks.html">📝 Tasks</a>
+            <a href="support.html">🤝 Support</a>
+        </nav>
+    </aside>
 
 
     <header>
