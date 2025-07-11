@@ -23,36 +23,38 @@
         </nav>
     </aside>
 
-    <section class="mood-hero">
-        <div class="mood-hero-content">
-            <h1 id="typing-text"></h1>
+    <div id="main-content">
+        <section class="mood-hero">
+            <div class="mood-hero-content">
+                <h1 id="typing-text"></h1>
+            </div>
+        </section>
+
+        <section class="select-mood">
+            <div class="mood-options">
+                <button class="mood" data-mood="happy">😀</button>
+                <button class="mood" data-mood="sad">😥</button>
+                <button class="mood" data-mood="angry">😠</button>
+                <button class="mood" data-mood="anxious">😰</button>
+                <button class="mood" data-mood="calm">🙂</button>
+            </div>
+        </section>
+
+        <div class="mood-result">
+            <h2>Your mood today:</h2>
+            <p id="mood-text" class="mood-icon">🤔</p>
+
+            <h3>Here's an affirmation just for you:</h3>
+            <p id="affirmation" class="affirmation-text">
+                <!--Content-->
+            </p>
         </div>
-    </section>
 
-    <section class="select-mood">
-        <div class="mood-options">
-            <button class="mood" data-mood="happy">😀</button>
-            <button class="mood" data-mood="sad">😥</button>
-            <button class="mood" data-mood="angry">😠</button>
-            <button class="mood" data-mood="anxious">😰</button>
-            <button class="mood" data-mood="calm">🙂</button>
-        </div>
-    </section>
-
-    <div class="mood-result">
-        <h2>Your mood today:</h2>
-        <p id="mood-text" class="mood-icon">🤔</p>
-
-        <h3>Here's an affirmation just for you:</h3>
-        <p id="affirmation" class="affirmation-text">
-            <!--Content-->
-        </p>
+        <section class="affirmation-slider">
+            <h2>🌼 Gentle Affirmations</h2>
+            <p id="affirmationText">You are enough.</p>
+        </section>
     </div>
-
-    <section class="affirmation-slider">
-        <h2>🌼 Gentle Affirmations</h2>
-        <p id="affirmationText">You are enough.</p>
-    </section>
 
     <footer class="footer">
         <div class="footer-content">

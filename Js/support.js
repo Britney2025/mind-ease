@@ -24,6 +24,14 @@ function showNextAffirmation() {
 
 setInterval(showNextAffirmation, 5000);
 
+const sidebar = document.getElementById("sidebar");
+const hamburger = document.getElementById("hamburger");
+
+function toggleSidebar() {
+    sidebar.classList.toggle("open");
+    hamburger.style.display = sidebar.classList.contains("open") ? "none" : "block";
+}
+
 // function toggleSidebar() {
 //     const sidebar = document.getElementById("sidebar");
 //     sidebar.style.width = sidebar.style.width === "250px" ? "0" : "250px";

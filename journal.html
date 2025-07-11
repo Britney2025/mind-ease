@@ -23,34 +23,36 @@
         </nav>
     </aside>
 
-    <header>
-        <h1>📒 My Journal</h1>
-        <p>Write your thoughts, reflections, or anything on your mind.</p>
-    </header>
+    <div id="main-content">
+        <header>
+            <h1>📒 My Journal</h1>
+            <p>Write your thoughts, reflections, or anything on your mind.</p>
+        </header>
+        <main>
+            <section class="journal-entry">
+                <textarea name="Journal" id="journal-text" placeholder="Note something down..."></textarea>
+                <br>
+                <button class="btn" onclick="saveJournal()">Save Entry</button>
+                <p id="saveMsg" class="save-message"></p>
+            </section>
 
-    <main>
-        <section class="journal-entry">
-            <textarea name="Journal" id="journal-text" placeholder="Note something down..."></textarea>
-            <br>
-            <button class="btn" onclick="saveJournal()">Save Entry</button>
-            <p id="saveMsg" class="save-message"></p>
-        </section>
+            <section class="journal-history">
+                <h2>Past Entries</h2>
+                <ul id="entryList"></ul>
+            </section>
 
-        <section class="journal-history">
-            <h2>Past Entries</h2>
-            <ul id="entryList"></ul>
-        </section>
-
-        <div id="confirmModal" class="modal">
-            <div class="modal-content">
-                <p id="confirmMessage">Are you sure?</p>
-                <div class="modal-buttons">
-                    <button id="confirmYes">Yes</button>
-                    <button id="confirmNo">No</button>
+            <div id="confirmModal" class="modal">
+                <div class="modal-content">
+                    <p id="confirmMessage">Are you sure?</p>
+                    <div class="modal-buttons">
+                        <button id="confirmYes">Yes</button>
+                        <button id="confirmNo">No</button>
+                    </div>
                 </div>
             </div>
-        </div>
-    </main>
+        </main>
+    </div>
+
 
     <footer class="footer">
         <div class="footer-content">
