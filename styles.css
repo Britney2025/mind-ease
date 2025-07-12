@@ -504,6 +504,24 @@ main {
     color: gray;
 }
 
+.due-label {
+    font-size:  0.75rem;
+    margin-left: 10px;
+    padding: 0.2rem 0.5rem;
+    border-radius: 6px;
+    font-weight: bold;
+}
+
+.due-today {
+    background-color: #fef3c7;
+    color: #92400e;
+}
+
+.overdue {
+    background-color: #fecaca;
+    color: #991b1b;
+}
+
 .modal {
     display: none;
     position: fixed;

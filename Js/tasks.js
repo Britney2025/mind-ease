@@ -15,9 +15,20 @@ function loadTasks() {
     tasks.forEach((task) => {
         const li = document.createElement("li");
         li.className = "task-item";
+        //Due date check
+        let dueLabel = "";
+        if (task.dueDate) {
+            const today = new Date().toISOString().split("T")[0];//y/m/d
+            if (task.dueDate === today) {
+                dueLabel = "<span class='due-label due-today'>🟡 Due today</span>";
+            } else if (task.dueDate < today) {
+                dueLabel = "<span class='due-label overdue'>🔴 Overdue</span>";
+            }
+        }
+
         li.innerHTML = `
         <input type="checkbox" ${task.done ? "checked" : ""} onchange="toggleDone(${task.id})"/>
-        <span class="${task.done ? 'done' : ''}">${task.text} <small>${task.dueDate || ""}</small></span>
+        <span class="${task.done ? 'done' : ''}">${task.text} ${task.dueDate ? `<small>(${task.dueDate})` : ""} ${dueLabel}</span>
         <button onclick="deleteTask(${task.id})">🗑</button>
         `;
         list.appendChild(li);
