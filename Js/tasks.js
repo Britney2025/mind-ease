@@ -1,8 +1,12 @@
 function loadTasks() {
     const tasks = JSON.parse(localStorage.getItem("myTasks")) || [];
 
-    //Sort undone(false) first, then done(true)
-    tasks.sort((a, b) => a.done - b.done);
+    tasks.sort((a, b) => {
+        //Sort undone first
+        if (a.done !== b.done) return a.done - b.done;
+        //Sort by date
+        return new Date(a.due) - new Date(b.due);
+    });
 
     const list = document.getElementById("taskItems");
     list.innerHTML = "";
@@ -20,13 +24,22 @@ function loadTasks() {
 
 function addTask() {
     const input = document.getElementById("taskInput");
+    const dueInput = document.getElementById("taskDue");
     const text = input.value.trim();
-    if (!text) return;
+    const dueDate = dueInput.value;
+    if (!text || !dueDate) return;
+
+    const newTask = {
+        text: text,
+        due: dueDate,
+        done: false
+    };
 
     const tasks = JSON.parse(localStorage.getItem("myTasks")) || [];
     tasks.unshift({ text, done: false });
     localStorage.setItem("myTasks", JSON.stringify(tasks));
     input.value = "";
+    dueInput.value = "";
     loadTasks();
 }
 
