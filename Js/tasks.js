@@ -1,3 +1,4 @@
+window.onload = loadTasks;
 function loadTasks() {
     const tasks = JSON.parse(localStorage.getItem("myTasks")) || [];
 
@@ -11,50 +12,57 @@ function loadTasks() {
     const list = document.getElementById("taskItems");
     list.innerHTML = "";
 
-    tasks.forEach((task, index) => {
+    tasks.forEach((task) => {
         const li = document.createElement("li");
+        li.className = "task-item";
         li.innerHTML = `
-        <input type="checkbox" ${task.done ? "checked" : ""} onchange="toggleDone(${index})"/>
-        <span class="${task.done ? 'done' : ''}">${task.text}</span>
-        <button onclick="deleteTask(${index})">🗑</button>
+        <input type="checkbox" ${task.done ? "checked" : ""} onchange="toggleDone(${task.id})"/>
+        <span class="${task.done ? 'done' : ''}">${task.text} <small>${task.dueDate || ""}</small></span>
+        <button onclick="deleteTask(${task.id})">🗑</button>
         `;
         list.appendChild(li);
     });
 }
 
 function addTask() {
-    const input = document.getElementById("taskInput");
+    const taskInput = document.getElementById("taskInput");
     const dueInput = document.getElementById("taskDue");
-    const text = input.value.trim();
+    const text = taskInput.value.trim();
     const dueDate = dueInput.value;
-    if (!text || !dueDate) return;
+    if (!text) return;
+
+    const tasks = JSON.parse(localStorage.getItem("myTasks")) || [];
 
     const newTask = {
+        id: Date.now(),
         text: text,
-        due: dueDate,
+        dueDate: dueDate,
         done: false
     };
 
-    const tasks = JSON.parse(localStorage.getItem("myTasks")) || [];
-    tasks.unshift({ text, done: false });
+    tasks.unshift(newTask);
     localStorage.setItem("myTasks", JSON.stringify(tasks));
-    input.value = "";
+    taskInput.value = "";
     dueInput.value = "";
     loadTasks();
-}
-
-function toggleDone(index) {
+};
+ 
+function toggleDone(id) {
     const tasks = JSON.parse(localStorage.getItem("myTasks")) || [];
-    tasks[index].done = !tasks[index].done;
-    localStorage.setItem("myTasks", JSON.stringify(tasks));
-    loadTasks();
+    const task = tasks.find(t => t.id === id);
+    if (task) {
+        task.done = !task.done;
+        localStorage.setItem("myTasks", JSON.stringify(tasks));
+        loadTasks();
+    }
 }
 
-function deleteTask(index) {
+function deleteTask(id) {
     showConfirm("Are you sure you want to delete this task?", () => {
         const tasks = JSON.parse(localStorage.getItem("myTasks")) || [];
-        tasks.splice(index, 1);
-        localStorage.setItem("myTasks", JSON.stringify(tasks));
+        const updatedTasks = tasks.filter(task => task.id !== id)
+        // tasks.splice(index, 1);
+        localStorage.setItem("myTasks", JSON.stringify(updatedTasks));
         loadTasks();
     })
 }

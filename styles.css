@@ -482,14 +482,14 @@ main {
     background-color: #0d9488;
 }
 
-.task-list ul {
+/* .task-list ul {
     list-style: none;
     padding: 0;
     max-width: 80%;
     margin: auto;
-}
+} */
 
-.task-list li {
+.task-item {
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -499,7 +499,7 @@ main {
     border-radius: 10px;
 }
 
-.task-list span.done {
+.task-item .done {
     text-decoration: line-through;
     color: gray;
 }
