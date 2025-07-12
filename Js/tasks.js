@@ -20,7 +20,7 @@ function addTask() {
     if (!text) return;
 
     const tasks = JSON.parse(localStorage.getItem("myTasks")) || [];
-    tasks.push({ text, done: false });
+    tasks.unshift({ text, done: false });
     localStorage.setItem("myTasks", JSON.stringify(tasks));
     input.value = "";
     loadTasks();
