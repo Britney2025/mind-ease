@@ -1,5 +1,9 @@
 function loadTasks() {
     const tasks = JSON.parse(localStorage.getItem("myTasks")) || [];
+
+    //Sort undone(false) first, then done(true)
+    tasks.sort((a, b) => a.done - b.done);
+
     const list = document.getElementById("taskItems");
     list.innerHTML = "";
 
