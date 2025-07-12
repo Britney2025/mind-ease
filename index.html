@@ -11,8 +11,20 @@
 </head>
 
 <body>
+    <aside id="sidebar" class="sidebar">
+        <button class="closebtn" onclick="closeSidebar()">&times;</button>
+        <nav>
+            <a href="home.html">💒 Home</a>
+            <a href="mood.html">😊 Mood</a>
+            <a href="journal.html">📒 Journal</a>
+            <a href="tasks.html">📝 Tasks</a>
+            <a href="support.html">🤝 Support</a>
+        </nav>
+    </aside>
+    <!-- Hamburger -->
+    <button id="hamburger" class="openbtn" onclick="openSidebar()">☰</button>
 
-    <button id="hamburger" onclick="toggleSidebar()">≡</button>
+    <!-- <button id="hamburger" onclick="toggleSidebar()">≡</button>
     <aside id="sidebar" class="sidebar">
         <button id="closeSidebar" onclick="toggleSidebar()">❌</button>
         <nav>
@@ -22,7 +34,7 @@
             <a href="tasks.html">📝 Tasks</a>
             <a href="support.html">🤝 Support</a>
         </nav>
-    </aside>
+    </aside> -->
 
     <div id="main-content">
         <section class="hero-section">
